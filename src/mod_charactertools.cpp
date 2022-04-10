@@ -20,7 +20,7 @@ public:
         if (p->IsInCombat())
             return false;
 
-        if (!sConfigMgr->GetBoolDefault("CharacterTools", true))
+        if (!sConfigMgr->GetOption<bool>("CharacterTools", true))
             return false;
 
         AddGossipItemFor(p, GOSSIP_ICON_CHAT, "|TInterface/Icons/Ability_Paladin_BeaconofLight:50:50|tChange My Race", GOSSIP_SENDER_MAIN, 1);

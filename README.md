@@ -30,7 +30,7 @@ AzerothCore v1.0.1+
 
 ### (Optional) Edit module configuration
 
-If you need to change the module configuration, go to your server configuration folder (e.g. **etc**), copy `character_tools.conf.dist` to `character_tools.conf` and edit it as you prefer.
+If you need to change the module configuration, go to your server configuration folder (e.g. **etc**), copy `mod_charactertools.conf.dist` to `mod_charactertools.conf` and edit it as you prefer.
 
 
 # Show your appreciation
