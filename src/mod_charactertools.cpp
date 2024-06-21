@@ -16,7 +16,7 @@ public:
     bool OnUse(Player* p, Item* i, SpellCastTargets const& /*targets*/) override
     {
         p->PlayerTalkClass->ClearMenus();
-
+        p->RemoveSpellCooldown(8690, true);
         if (p->IsInCombat())
             return false;
 
