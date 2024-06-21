@@ -56,7 +56,8 @@ public:
                 break;
             case 5:
                 player->GiveLevel(1);
-                player->resetSpells();
+                player->SetAtLoginFlag(AT_LOGIN_RESET_SPELLS);
+                player->SetAtLoginFlag(AT_LOGIN_RESET_TALENTS);
                 player->SaveToDB(false, true);
                 player->GetSession()->LogoutPlayer(true);
                 //ChatHandler(player->GetSession()).PSendSysMessage("CHAT OUTPUT: Please log out for level change to take effect.");
