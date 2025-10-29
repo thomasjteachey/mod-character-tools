@@ -27,6 +27,7 @@ public:
         AddGossipItemFor(p, GOSSIP_ICON_CHAT, "|TInterface/Icons/INV_BannerPVP_01:50:50|tChange My Faction", GOSSIP_SENDER_MAIN, 2);
         AddGossipItemFor(p, GOSSIP_ICON_CHAT, "|TInterface/Icons/Achievement_BG_returnXflags_def_WSG:50:50|tChange My Appearance", GOSSIP_SENDER_MAIN, 3);
         AddGossipItemFor(p, GOSSIP_ICON_CHAT, "|TInterface/Icons/INV_Inscription_Scroll:50:50|tChange My Name", GOSSIP_SENDER_MAIN, 4);
+                AddGossipItemFor(p, GOSSIP_ICON_CHAT, "|TInterface/Icons/INV_Inscription_Scroll:50:50|tReset to Level 1", GOSSIP_SENDER_MAIN, 5);
         SendGossipMenuFor(p, DEFAULT_GOSSIP_MESSAGE, i->GetGUID());
 
         return false; // If item has spell cast it normal.
@@ -52,6 +53,13 @@ public:
             case 4:
                 player->SetAtLoginFlag(AT_LOGIN_RENAME);
                 ChatHandler(player->GetSession()).PSendSysMessage("CHAT OUTPUT: Please log out for name change.");
+                break;
+
+            case 5:
+                player->GiveLevel(1);
+                player->resetSpells();
+                player->GetSession()->LogoutPlayer(true);
+                //ChatHandler(player->GetSession()).PSendSysMessage("CHAT OUTPUT: Please log out .");
                 break;
         }
     }
